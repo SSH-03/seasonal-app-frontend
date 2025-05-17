@@ -8,7 +8,7 @@ function App() {
       <div className="text-center danger ">
         <h1 className="text-2xl text-green-500 underline">Seasonal Products Application</h1>
         <div className="flex flex-col items-center justify-center h-40">
-          <h4 className="text-yellow-300 ">Midhun Naga Sai</h4>
+          <h4 className="text-yellow-300 ">Munagapati Midhun Naga Sai</h4>
           <h4 className="text-yellow-300 bg-red-700">Harsha Sree</h4>
         </div>
         <Button disabled>
