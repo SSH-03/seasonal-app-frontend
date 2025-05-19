@@ -1,7 +1,9 @@
 import SSH_Logo from "./SSH_Logo.jpg"
+import Logo from "./Logo.jpg"
 
 export const assets = {
-    SSH_Logo
+    SSH_Logo,
+    Logo
 }
 
 export const products = [
