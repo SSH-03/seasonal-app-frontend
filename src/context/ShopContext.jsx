@@ -1,0 +1,19 @@
+import { createContext } from "react";
+import { products } from "@/assets/assests";
+
+export const ShopContext = createContext();
+
+const ShopContextProvider = (props) => {
+    // we will add any state variable or function with in this value object and we can access in any component via Context API
+    const value = {
+        products,
+    };
+
+    return (
+        <ShopContext.Provider value={value}>
+            {props.children}
+        </ShopContext.Provider>
+    );
+};
+
+export default ShopContextProvider;
