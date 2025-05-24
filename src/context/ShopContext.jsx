@@ -4,9 +4,14 @@ import { products } from "@/assets/assests";
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
+    const currency = "₹";
+    const delivery_fee = 34;
+
     // we will add any state variable or function with in this value object and we can access in any component via Context API
     const value = {
         products,
+        currency,
+        delivery_fee,
     };
 
     return (
