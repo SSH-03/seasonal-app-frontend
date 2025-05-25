@@ -1,11 +1,16 @@
-import React from 'react'
+import BestSeller from "@/components/custom/BestSeller";
+import LatestCollection from "@/components/custom/LatestCollection";
+import SSHNA from "@/components/custom/SSHNA";
+import React from "react";
 
 const Home = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+    return (
+        <div>
+            <SSHNA />
+            <LatestCollection />
+            <BestSeller />
+        </div>
+    );
+};
 
-export default Home
+export default Home;
