@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import Orders from "./pages/Orders";
 import Navbar from "./components/custom/Navbar";
+import Footer from "./components/custom/Footer";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/place-order" element={<PlaceOrder />} />
         <Route path="/orders" element={<Orders />} />
       </Routes>
+      <Footer/>
       <div className="text-center danger ">
         <h1 className="text-2xl text-green-500 underline">
           Seasonal Products Application
