@@ -29,7 +29,7 @@ function App() {
         <Route path="/orders" element={<Orders />} />
       </Routes>
       <Footer/>
-      <div className="text-center danger ">
+      {/* <div className="text-center danger ">
         <h1 className="text-2xl text-green-500 underline">
           Seasonal Products Application
         </h1>
@@ -41,7 +41,7 @@ function App() {
           <Loader2 className="animate-spin" />
           Started Building on 27-04-2025
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 }
