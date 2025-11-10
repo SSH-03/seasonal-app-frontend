@@ -1,15 +1,21 @@
 import { assets } from "@/assets/assests";
-import React, { useState } from "react";
+import { ShopContext } from "@/context/ShopContext";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+    // For opening small box when profile icon is clicked
     const [isOpen, setIsOpen] = useState(false);
     const [visible, setVisible] = useState(false);
 
+    const { showSearch, setShowSearch } = useContext(ShopContext);
+
     return (
         <div className="flex items-center justify-between py-5 font-medium">
-            <Link to={'/'} ><img src={assets.SSH_Logo} className="w-36" /></Link>
-            
+            <Link to={"/"}>
+                <img src={assets.SSH_Logo} className="w-36" />
+            </Link>
+
             <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
                 <NavLink to={"/"} className="flex flex-col items-center gap-1">
                     <p>HOME</p>
@@ -39,15 +45,16 @@ const Navbar = () => {
             </ul>
             <div className="flex items-center gap-6">
                 <img
-                    src={assets.Logo}
+                    onClick={() => setShowSearch(!showSearch)}
+                    src={assets.search_icon}
                     className="w-5 cursor-pointer"
                     alt="search_icon"
                 />
                 <div className="group relative">
                     <button onClick={() => setIsOpen(!isOpen)}>
                         <img
-                            className="w-5 cursor-pointer"
-                            src={assets.Logo}
+                            className="w-6 cursor-pointer"
+                            src={assets.profile_icon}
                             alt="profile_icon"
                         />
                     </button>
@@ -70,8 +77,8 @@ const Navbar = () => {
                 </div>
                 <Link to="/cart" className="relative">
                     <img
-                        src={assets.Logo}
-                        className="w-5 min-w-5"
+                        src={assets.cart_icon}
+                        className="w-6 min-w-5"
                         alt="cart_icon"
                     />
                     <p className="absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]">
