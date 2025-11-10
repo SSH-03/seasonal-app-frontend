@@ -5,7 +5,8 @@ import { ShopContext } from "@/context/ShopContext";
 import React, { useContext, useEffect, useState } from "react";
 
 const Collection = () => {
-    const { products } = useContext(ShopContext);
+    const { products, search, showSearch } = useContext(ShopContext);
+    // search = value inside the search box
     const [showFilter, setShowFilter] = useState(false);
     const [filterProducts, setFilterProducts] = useState([]);
     const [category, setCategory] = useState([]);
@@ -34,6 +35,13 @@ const Collection = () => {
 
     const applyFilter = () => {
         let productsCopy = products.slice();
+
+        if (showSearch && search) {
+            productsCopy = productsCopy.filter((item) =>
+                item.name.toLowerCase().includes(search.toLowerCase())
+            );
+        }
+
         if (category.length > 0) {
             productsCopy = productsCopy.filter((item) =>
                 category.includes(item.category)
@@ -44,9 +52,7 @@ const Collection = () => {
                 subCategory.includes(item.subCategory)
             );
         }
-        console.log("productcopy", productsCopy);
         setFilterProducts(productsCopy);
-        console.log("Filterproducts", filterProducts);
     };
 
     const sortProduct = () => {
@@ -78,13 +84,12 @@ const Collection = () => {
 
     useEffect(() => {
         applyFilter();
-        console.log(category);
-    }, [category, subCategory]);
+    }, [category, subCategory, search, showSearch]);
+    // When search changes or the showSearch dialog box changes then this applyFilter method executes by useEffect
 
-useEffect(() =>{
-    sortProduct()
-},[sortType])
-
+    useEffect(() => {
+        sortProduct();
+    }, [sortType]);
 
     return (
         <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
@@ -184,7 +189,10 @@ useEffect(() =>{
                 <div className="flex justify-between text-base sm:text-2xl mb-4">
                     <Title text1={"ALL"} text2={"COLLECTIONS"} />
                     {/* Product sort  */}
-                    <select onChange={(e)=>setSortType(e.target.value)} className="border-2 border-gray -300 text-sm px-2">
+                    <select
+                        onChange={(e) => setSortType(e.target.value)}
+                        className="border-2 border-gray -300 text-sm px-2"
+                    >
                         <option value="relevant">Sort By: Relevant</option>
                         <option value="low-high">Sort By: Low to High</option>
                         <option value="high-low">Sort By: High to Low</option>
