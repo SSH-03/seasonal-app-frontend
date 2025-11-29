@@ -59,6 +59,13 @@ const ShopContextProvider = (props) => {
         
     // },[cartItems])
 
+    const updateQuantity = async(itemId, size, quantity) => {
+
+        let cartData = structuredClone(cartItems)
+        cartData[itemId][size] =quantity
+        setCartItems(cartData)
+    }
+
     // we will add any state variable or function with in this value object and we can access in any component via Context API
     const value = {
         products,
@@ -70,7 +77,8 @@ const ShopContextProvider = (props) => {
         setShowSearch,
         cartItems,
         addToCart,
-        getCartCount
+        getCartCount,
+        updateQuantity
     };
 
     return (

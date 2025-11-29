@@ -7,6 +7,7 @@ import dropdown_icon from "./dropdown_icon.png";
 import cross_icon from "./cross_icon.png";
 import star_icon from "./star_icon.png";
 import star_dull_icon from "./star_dull_icon.png";
+import bin_icon from "./bin_icon.png";
 
 export const assets = {
     SSH_Logo,
@@ -18,6 +19,7 @@ export const assets = {
     cross_icon,
     star_icon,
     star_dull_icon,
+    bin_icon
 };
 
 export const products = [
