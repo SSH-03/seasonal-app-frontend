@@ -13,25 +13,27 @@ import Orders from "./pages/Orders";
 import Navbar from "./components/custom/Navbar";
 import Footer from "./components/custom/Footer";
 import SearchBar from "./components/custom/SearchBar";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
-  return (
-    <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
-      <Navbar />
-      <SearchBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/collection" element={<Collection />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/product/:productId" element={<Product />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/place-order" element={<PlaceOrder />} />
-        <Route path="/orders" element={<Orders />} />
-      </Routes>
-      <Footer/>
-      {/* <div className="text-center danger ">
+    return (
+        <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
+            <ToastContainer /> 
+            <Navbar />
+            <SearchBar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/collection" element={<Collection />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/product/:productId" element={<Product />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/place-order" element={<PlaceOrder />} />
+                <Route path="/orders" element={<Orders />} />
+            </Routes>
+            <Footer />
+            {/* <div className="text-center danger ">
         <h1 className="text-2xl text-green-500 underline">
           Seasonal Products Application
         </h1>
@@ -44,8 +46,8 @@ function App() {
           Started Building on 27-04-2025
         </Button>
       </div> */}
-    </div>
-  );
+        </div>
+    );
 }
 
 export default App;

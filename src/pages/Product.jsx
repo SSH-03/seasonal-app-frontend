@@ -8,7 +8,7 @@ const Product = () => {
     const { productId } = useParams(); // Gets the productId form the URL
     // productId because we added this Route --> <Route path="/product/:productId" element={<Product />} />
 
-    const { products, currency } = useContext(ShopContext);
+    const { products, currency, addToCart} = useContext(ShopContext);
     const [productData, setProductData] = useState(false);
 
     const [image, setImage] = useState("");
@@ -87,7 +87,7 @@ const Product = () => {
                             ))}
                         </div>
                     </div>
-                    <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 ">
+                    <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 " onClick={()=>addToCart(productData._id, size)}>
                         ADD TO CART
                     </button>
                     <hr className="mt-8 sm:w-4/5" />
@@ -119,9 +119,11 @@ const Product = () => {
                 </div>
             </div>
 
-{/* Display Related Products */}
-<RelatedProducts category={productData.category} subCategory={productData.subCategory}/>
-
+            {/* Display Related Products */}
+            <RelatedProducts
+                category={productData.category}
+                subCategory={productData.subCategory}
+            />
         </div>
     ) : (
         <div className="opacity-0"></div>
