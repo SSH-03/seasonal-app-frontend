@@ -1,4 +1,5 @@
 import { assets } from "@/assets/assests";
+import RelatedProducts from "@/components/custom/RelatedProducts";
 import { ShopContext } from "@/context/ShopContext";
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -7,7 +8,7 @@ const Product = () => {
     const { productId } = useParams(); // Gets the productId form the URL
     // productId because we added this Route --> <Route path="/product/:productId" element={<Product />} />
 
-    const { products, currency } = useContext(ShopContext);
+    const { products, currency, addToCart} = useContext(ShopContext);
     const [productData, setProductData] = useState(false);
 
     const [image, setImage] = useState("");
@@ -86,7 +87,7 @@ const Product = () => {
                             ))}
                         </div>
                     </div>
-                    <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 ">
+                    <button className="bg-black text-white px-8 py-3 text-sm active:bg-gray-700 " onClick={()=>addToCart(productData._id, size)}>
                         ADD TO CART
                     </button>
                     <hr className="mt-8 sm:w-4/5" />
@@ -100,8 +101,29 @@ const Product = () => {
 
             {/* Description and Review Section */}
             <div className="mt-20">
-                <div></div>
+                <div className="flex">
+                    <b className="border px-5 py-3 text-sm">Description</b>
+                    <p className="border px-5 py-3 text-sm">Reviews (2303)</p>
+                </div>
+                <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
+                    <p>
+                        Vite is a build tool that aims to provide a faster and
+                        more efficient development experience for modern web
+                        projects.
+                    </p>
+                    <p>
+                        Vite is a build tool that aims to provide a faster and
+                        more efficient development experience for modern web
+                        projects.
+                    </p>
+                </div>
             </div>
+
+            {/* Display Related Products */}
+            <RelatedProducts
+                category={productData.category}
+                subCategory={productData.subCategory}
+            />
         </div>
     ) : (
         <div className="opacity-0"></div>

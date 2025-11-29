@@ -1,5 +1,5 @@
-import SSH_Logo from "./SSH_Logo.jpg"
-import Logo from "./Logo.jpg"
+import SSH_Logo from "./SSH_Logo.jpg";
+import Logo from "./Logo.jpg";
 import search_icon from "./search_icon.png";
 import profile_icon from "./profile_icon.png";
 import cart_icon from "./cart_icon.png";
@@ -7,6 +7,7 @@ import dropdown_icon from "./dropdown_icon.png";
 import cross_icon from "./cross_icon.png";
 import star_icon from "./star_icon.png";
 import star_dull_icon from "./star_dull_icon.png";
+import bin_icon from "./bin_icon.png";
 
 export const assets = {
     SSH_Logo,
@@ -18,6 +19,7 @@ export const assets = {
     cross_icon,
     star_icon,
     star_dull_icon,
+    bin_icon
 };
 
 export const products = [
@@ -37,6 +39,42 @@ export const products = [
         _id: "A2",
         name: "Men top",
         description: "Used for flying at Night",
+        price: 250,
+        image: [SSH_Logo, search_icon, profile_icon, cart_icon],
+        category: "Men",
+        subCategory: "Topwear",
+        sizes: ["S", "M", "L"],
+        date: 1716634345448,
+        bestseller: false,
+    },
+    {
+        _id: "A2",
+        name: "Men top 2",
+        description: "Used for flying at Night two",
+        price: 250,
+        image: [SSH_Logo, search_icon, profile_icon, cart_icon],
+        category: "Men",
+        subCategory: "Topwear",
+        sizes: ["S", "M", "L"],
+        date: 1716634345448,
+        bestseller: false,
+    },
+    {
+        _id: "A2",
+        name: "Men top 3",
+        description: "Used for flying at Night two",
+        price: 250,
+        image: [SSH_Logo, search_icon, profile_icon, cart_icon],
+        category: "Men",
+        subCategory: "Topwear",
+        sizes: ["S", "M", "L"],
+        date: 1716634345448,
+        bestseller: false,
+    },
+    {
+        _id: "A2",
+        name: "Men top 4",
+        description: "Used for flying at Night two",
         price: 250,
         image: [SSH_Logo, search_icon, profile_icon, cart_icon],
         category: "Men",
