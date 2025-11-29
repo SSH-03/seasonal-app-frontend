@@ -36,11 +36,28 @@ const ShopContextProvider = (props) => {
 
     }
 
-    // useEffect for when the cartItems are get modified 
-    useEffect(()=>{
-        console.log(cartItems);
+    const getCartCount=() => {
+        let totalCount=0;
+        for(const items in cartItems) { //iterate the items
+            for(const item in cartItems[items]) { // iterate the each product size
+                try {
+                    if (cartItems[items][item] > 0) {
+                        totalCount += cartItems[items][item]
+                    }
+                    
+                } catch (error) {
+                    
+                }
+            }
+        }
+        return totalCount
+    }
+
+    // // useEffect for when the cartItems are get modified 
+    // useEffect(()=>{
+    //     console.log(cartItems);
         
-    },[cartItems])
+    // },[cartItems])
 
     // we will add any state variable or function with in this value object and we can access in any component via Context API
     const value = {
@@ -52,7 +69,8 @@ const ShopContextProvider = (props) => {
         showSearch,
         setShowSearch,
         cartItems,
-        addToCart
+        addToCart,
+        getCartCount
     };
 
     return (
