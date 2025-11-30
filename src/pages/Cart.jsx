@@ -5,7 +5,7 @@ import { ShopContext } from "@/context/ShopContext";
 import React, { useContext, useEffect, useState } from "react";
 
 const Cart = () => {
-    const { products, currency, cartItems, updateQuantity } =
+    const { products, currency, cartItems, updateQuantit, navigate } =
         useContext(ShopContext);
 
     const [cartData, setCartData] = useState([]);
@@ -93,7 +93,7 @@ const Cart = () => {
                 <div className="w-full sm:w-[450px]">
                     <CartTotal />
                     <div className="w-full text-end">
-                        <button className="bg-black text-white text-sm my-8 px-8 py-3">
+                        <button className="bg-black text-white text-sm my-8 px-8 py-3" onClick={() =>{navigate("/place-order")}}>
                             PROCEED TO PLACE THE ORDER
                         </button>
                         {/* <button>PROCEED TO CHECKOUT</button> */}

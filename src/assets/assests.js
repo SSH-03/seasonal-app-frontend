@@ -8,6 +8,8 @@ import cross_icon from "./cross_icon.png";
 import star_icon from "./star_icon.png";
 import star_dull_icon from "./star_dull_icon.png";
 import bin_icon from "./bin_icon.png";
+import stripe_icon from "./stripe_icon.png";
+import razorpay_icon from "./razorpay_icon.jpg";
 
 export const assets = {
     SSH_Logo,
@@ -19,7 +21,9 @@ export const assets = {
     cross_icon,
     star_icon,
     star_dull_icon,
-    bin_icon
+    bin_icon,
+    stripe_icon,
+    razorpay_icon
 };
 
 export const products = [
